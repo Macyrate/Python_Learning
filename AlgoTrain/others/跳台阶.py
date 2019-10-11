@@ -3,8 +3,10 @@ class Solution:
     def jumpFloor(self, number):
         a = 1
         b = 1
-        for i in range(number):
+        i = 0
+        while(i<number):
             a,b = b,a+b
+            i += 1
         return a
 		
 jumper = Solution()
