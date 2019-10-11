@@ -4,7 +4,8 @@
 # 重复步骤1~3，直到排序完成。
 def bubble_sort(listin):
     deallist = listin[:]
-    for x in range(len(deallist)):
-        for y in range(len(deallist)-1):
-            pass
-        
+    for x in range(0,len(deallist)):
+        for y in range(0,len(deallist)-1-x):
+            if deallist[y] > deallist[y+1]:
+                deallist[y],deallist[y+1] = deallist[y+1],deallist[y]
+    return deallist
