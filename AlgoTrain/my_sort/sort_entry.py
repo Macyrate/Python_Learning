@@ -3,6 +3,7 @@ import time
 import bubble_sort
 import quick_sort
 import insertion_sort
+import selection_sort
 
 print('请输入要进行排序的序列')
 listin = list(map(float,input().split()))
@@ -26,7 +27,9 @@ while(1):
         print(deallist)
     if(sel == '3'):
         print(insertion_sort.insertion_sort(listin))
-    # elif(sel >=3 and sel<=6):
+    if(sel == '4'):
+        print(selection_sort.selection_sort(listin))
+    # elif(sel >=4 and sel<=6):
     #     print('开发中')
     # else:
     #     raise ValueError('请输入正确的选项！')
