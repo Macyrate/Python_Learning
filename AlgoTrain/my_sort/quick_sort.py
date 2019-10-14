@@ -4,23 +4,16 @@
 
 def quick_sort(listin, left, right):
     if left < right:
-        pivot = partition(listin, left, right)
-        quick_sort(listin, left, pivot - 1)
-        quick_sort(listin, pivot, right)
+        pivotkey = partition(listin, left, right)
+        quick_sort(listin, left, pivotkey - 1)
+        quick_sort(listin, pivotkey, right)
 
 def partition(listin,left,right):
-    x = listin[right]
-    i = left - 1
-    for j in range(left,right):
-        if listin[j] <= x:
-            i += 1
-            listin[i], listin[j] = listin[j], listin[i]
-    listin[i + 1], listin[right] = listin[right], listin[i + 1]
-    return i + 1
-
-
-
-
-
-
-
+    pivotvalue = listin[right]
+    lastlesskey = left - 1
+    for x in range(left,right):                                         #扫描除最右的pivot以外的元素
+        if listin[x] <= pivotvalue:
+            lastlesskey += 1
+            listin[lastlesskey], listin[x] = listin[x], listin[lastlesskey]                 #对不大于pivot值的元素，换到“小”区的最后；否则不动，作为“大”区
+    listin[lastlesskey + 1], listin[right] = listin[right], listin[lastlesskey + 1]         #由于基准在最后，将基准pivot与“大”区的第一个元素互换位置，即放到了中间（i+1的位置）
+    return lastlesskey + 1
