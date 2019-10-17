@@ -5,6 +5,7 @@ import quick_sort
 import insertion_sort
 import selection_sort
 import heap_sort
+import merge_sort
 
 print('请输入要进行排序的序列')
 listin = list(map(float,input().split()))
@@ -34,7 +35,8 @@ try:
         elif(sel == '5'):
             print(heap_sort.heap_sort(listin))
         elif(sel == '6'):
-            print('开发中')
+            deallist = listin[:]
+            print(merge_sort.merge_sort(deallist))
         else:
             raise ValueError
         end = time.time()
